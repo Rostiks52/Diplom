@@ -39,7 +39,7 @@ public class DataHelper {
 
     public static String generateValidCardOwner() {
         Faker faker = new Faker(new Locale("en"));
-        String vaildCardOwner = faker.name().fullName();
+        String vaildCardOwner = faker.name().firstName() + " " + faker.name().lastName();
         return vaildCardOwner;
     }
 

@@ -10,7 +10,7 @@ import ru.netology.data.DataHelper;
 import ru.netology.data.SqlUtils;
 import ru.netology.page.CreditPage;
 import ru.netology.page.MainPage;
-import ru.netology.page.DebitPage;
+
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -55,7 +55,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldLeaveFieldsEmpty() {
+    void shouldGetErrorWhenLeaveFieldsEmpty() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getAllEmptyFields());
@@ -64,7 +64,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldUseShortCardNumber() {
+    void shouldGetErrorWhenUsedShortCardNumber() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getShotCardNumber());
@@ -73,7 +73,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldUseEnAlphabCardNumber() {
+    void shouldGetErrorWhenInputEnAlphabCardNumber() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getEnAlphabCardNumber());
@@ -81,7 +81,7 @@ public class TestCreditPage {
         assertEquals(0, SqlUtils.getRowsCreditPurchase());
     }
     @Test
-    void shouldUseRuAlphabCardNumber() {
+    void shouldGetErrorWhenInputRuAlphabCardNumber() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getRussAlphabCardNumber());
@@ -90,7 +90,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldUseSymbolCardNumber() {
+    void shouldGetErrorWhenInputSymbolCardNumber() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getSymbolCardNumber());
@@ -99,7 +99,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldLeaveCardNumberEmpty() {
+    void shouldGetErrorIfLeaveCardNumberEmpty() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getEmptyCardNumber());
@@ -108,7 +108,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldLeaveMonthEmpty() {
+    void shouldGetErrorIfLeaveMonthEmpty() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getEmptyMonth());
@@ -117,7 +117,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldUseInValidMonth() {
+    void shouldGetErrorWhenInputInValidMonth() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getInvalidMonth());
@@ -126,7 +126,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldLUseUnAlphabMonth() {
+    void shouldGetErrorWhenInputUnAlphabMonth() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getEnAlphabMonth());
@@ -135,7 +135,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldLUseRuAlphabMonth() {
+    void shouldGetErrorWhenInputRuAlphabMonth() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getRusAlphabMonth());
@@ -144,7 +144,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldLUseSymbolMonth() {
+    void shouldGetErrorWhenInputsSymbolMonth() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getSymbMonth());
@@ -153,7 +153,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldLUseOneDigitMonth() {
+    void shouldGetErrorWhenInputsOneDigitMonth() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getOntDigitMonth());
@@ -162,7 +162,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldLeaveYearEmpty() {
+    void shouldGetErrorIfLeaveYearEmpty() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getEmptyYear());
@@ -171,7 +171,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldUsePastYearEmpty() {
+    void shouldGetErrorWhenInputsPastYearEmpty() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getPastYear());
@@ -180,7 +180,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldUseEnAlphabYear() {
+    void shouldGetErrorWhenInputsEnAlphabYear() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getEnAlphabYear());
@@ -189,7 +189,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldUseRuAlphabYear() {
+    void shouldGetErrorWhenInputsRuAlphabYear() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getRusAlphabYear());
@@ -198,7 +198,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldLeaveOwnerEmpty() {
+    void shouldGetErrorIfLeaveOwnerEmpty() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getEmptyCardOwner());
@@ -207,7 +207,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldUseSymbolOwner() {
+    void shouldGetErrorWhenInputsSymbolOwner() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getSymbolsCardOwner());
@@ -216,7 +216,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldUseNumericOwner() {
+    void shouldGetErrorWhenInputsNumericOwner() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getNumericCardOwner());
@@ -225,7 +225,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldLeaveCvcEmpty() {
+    void shouldGetErrorIfLeaveCvcEmpty() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getEmptyCvc());
@@ -234,7 +234,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldInputIncorrectCardNum() {
+    void shouldGetErrorWhenInputsIncorrectCardNum() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getIncorrectCardNumber());
@@ -243,7 +243,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldInputIncorrectMonth() {
+    void shouldGetErrorWhenInputsIncorrectMonth() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getZeroMonth());
@@ -252,7 +252,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldInputIncorrectYear() {
+    void shouldGetErrorWhenInputsIncorrectYear() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getIncorrectYear());
@@ -261,7 +261,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldInputIncorrectOwner() {
+    void shouldGetErrorWhenInputsInputIncorrectOwner() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getIncorrectCardOwner());
@@ -270,7 +270,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldInputIncorrectCvc() {
+    void shouldGetErrorWhenInputsIncorrectCvc() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getTwoDigitCvc());
@@ -279,7 +279,7 @@ public class TestCreditPage {
     }
 
     @Test
-    void shouldInputOneDigitCvc() {
+    void shouldGetErrorWhenInputsOneDigitCvc() {
         MainPage mainPage = new MainPage();
         CreditPage creditPage = mainPage.chooseCreditPage();
         creditPage.fillForm(DataHelper.getOneDigitCvc());

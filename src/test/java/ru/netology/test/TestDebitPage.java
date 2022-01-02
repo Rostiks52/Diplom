@@ -54,7 +54,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldLeaveFieldsEmpty() {
+    void shouldGetErrorWhenLeaveFieldsEmpty() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getAllEmptyFields());
@@ -63,7 +63,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseShortCardNumber() {
+    void shouldGetErrorWhenShortCardNumberUsed() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getShotCardNumber());
@@ -72,7 +72,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseEnAlphabCardNumber() {
+    void shouldGetErrorWhenUsedEnAlphabCardNumber() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getEnAlphabCardNumber());
@@ -81,7 +81,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseSymbolCardNumber() {
+    void shouldGetErrorWhenUsedSymbolCardNumber() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getSymbolCardNumber());
@@ -90,7 +90,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseRuAlphabCardNumber() {
+    void shouldGetErrorWhenUsedRuAlphabCardNumber() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getRussAlphabCardNumber());
@@ -99,7 +99,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldLeaveCardNumberEmpty() {
+    void shouldGetErrorWhenLeaveCardNumberEmpty() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getEmptyCardNumber());
@@ -108,7 +108,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldLeaveMonthEmpty() {
+    void shouldGetErrorWhenLeaveMonthEmpty() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getEmptyMonth());
@@ -117,7 +117,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseInvalidMonth() {
+    void shouldGetErrorWhenUsedInvalidMonth() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getInvalidMonth());
@@ -126,7 +126,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseEnAlphabMonth() {
+    void shouldGetErrorWhenUsedEnAlphabMonth() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getEnAlphabMonth());
@@ -135,7 +135,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseRuAlphabMonth() {
+    void shouldUGetErrorWhenUsedRuAlphabMonth() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getRusAlphabMonth());
@@ -144,7 +144,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseSymbolMonth() {
+    void shouldGetErrorWhenUsedSymbolMonth() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getSymbMonth());
@@ -153,7 +153,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseOneDigitMonth() {
+    void shouldGetErrorWhenUsedOneDigitMonth() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getOntDigitMonth());
@@ -162,7 +162,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldLeaveYearEmpty() {
+    void shouldGetErrorWhenLeaveYearEmpty() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getEmptyYear());
@@ -171,7 +171,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUsePastYear() {
+    void shouldGetErrorWhenUsedPastYear() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getPastYear());
@@ -180,7 +180,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseEnAlphabYear() {
+    void shouldGetErrorWhenUsedEnAlphabYear() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getEnAlphabYear());
@@ -189,7 +189,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseRuAlphabYear() {
+    void shouldGetErrorWhenUsedRuAlphabYear() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getRusAlphabYear());
@@ -198,7 +198,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldLeaveOwnerEmpty() {
+    void shouldGetErrorWhenLeaveOwnerEmpty() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getEmptyCardOwner());
@@ -207,7 +207,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseSymbolOwner() {
+    void shouldGetErrorWhenUsedSymbolOwner() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getSymbolsCardOwner());
@@ -216,7 +216,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldUseNumericOwner() {
+    void shouldGetErrorWhenUsedNumericOwner() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getNumericCardOwner());
@@ -225,7 +225,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldLeaveCvcEmpty() {
+    void shouldGetErrorWhenLeaveCvcEmpty() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getEmptyCvc());
@@ -234,7 +234,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldInputIncorrectCardNum() {
+    void shouldGetErrorWhenInputIncorrectCardNum() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getIncorrectCardNumber());
@@ -243,7 +243,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldInputIncorrectMonth() {
+    void shouldGetErrorWhenInputIncorrectMonth() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getZeroMonth());
@@ -252,7 +252,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldInputIncorrectYear() {
+    void shouldGetErrorWhenInputIncorrectYear() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getIncorrectYear());
@@ -261,7 +261,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldInputIncorrectOwner() {
+    void shouldGetErrorWhenInputIncorrectOwner() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getIncorrectCardOwner());
@@ -270,7 +270,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldInputIncorrectCvc() {
+    void shouldGetErrorWhenInputIncorrectCvc() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getTwoDigitCvc());
@@ -279,7 +279,7 @@ public class TestDebitPage {
     }
 
     @Test
-    void shouldInputOneDigitCvc() {
+    void shouldGetErrorWhenInputOneDigitCvc() {
         MainPage mainPage = new MainPage();
         DebitPage debitPage = mainPage.chooseDebitPage();
         debitPage.fillForm(DataHelper.getOneDigitCvc());

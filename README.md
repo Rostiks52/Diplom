@@ -1,20 +1,50 @@
+#Дипломный проект профессии «Тестировщик»
+
+Проект автоматизации тестирования веб-приложения. Описание <a href= https://github.com/netology-code/qa-diploma>задания</a>.
+
+##Начало работы
+
+Проект необходимо склонировать на ПК, используя комманду 
+    
+    git clone.
+
+###Предусловия
+
 Для запуска проекта на ПК должны быть установлены: Java 11, Intellej IDEA Ultimate, Docker.
 
-Выполнить команду git clone данного репозитория.
+###Установка и запуск
 
 Открыть проект в IntelliJ IDEA Ultimate.
 
 Запустить Docker на ПК.
 
-В терминале IDEA выполнить команду docker-compose up.
+В терминале IDEA выполнить команду 
 
-В другой вкладке терминала выполнить команду  для запуска приложения на СУБД MySQL java -jar aqa-shop.jar -P:jdbc.url=jdbc:mysql://localhost:3306/app -P:jdbc.user=app -P:jdbc.password=pass
+    docker-compose up
 
-В другой вкладке теринала выполнить команду для запуска тестов  .\gradlew test -Ddatabase.url=jdbc:mysql://localhost:3306/app -Ddatabase.name=app -Ddatabase.password=pass
+В другой вкладке терминала выполнить команду  для запуска приложения на СУБД MySQL:
 
-После выполнения тестов для просмотра отчетов в другой вкладке терминала выполнить команды .\gradlew allureReport и затем .\gradlew allureServe . Завершить работу плагина Ctrl+C.
+    java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar aqa-shop.jar
 
-Для запуска приложения на СУБД PostgreSQL  java -jar aqa-shop.jar -P:jdbc.url=jdbc:postgresql://localhost:5432/postgres -P:jdbc.user=app -P:jdbc.password=pass
+В другой вкладке теринала выполнить команду для запуска тестов:
+  
+    .\gradlew test "-Ddatabase.url=jdbc:mysql://localhost:3306/mysql
 
-Тесты запускаются командой в другой вкладке терминала .\gradlew test -Ddatabase.url=jdbc:postgresql://localhost:5432/postgres -Ddatabase.name=app -Ddatabase.password=pass
+После выполнения тестов для просмотра отчетов в другой вкладке терминала выполнить команды:
+
+    .\gradlew allureReport
+и затем
+
+    .\gradlew allureServe 
+
+Завершить работу плагина Ctrl+C.
+
+Для запуска приложения на СУБД PostgreSQL:
+
+    java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar aqa-shop.jar
+
+Тесты запускаются командой в другой вкладке терминала:
+
+    .\gradlew test "-Ddatabase.url=jdbc:postgresql://localhost:5432/postgres"
+
 

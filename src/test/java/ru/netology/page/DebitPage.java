@@ -11,32 +11,31 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DebitPage {
 
-    private SelenideElement cardNumber = $(byText("Номер карты")).parent().$(".input__control");
-    private SelenideElement month = $(byText("Месяц")).parent().$(".input__control");
-    private SelenideElement year = $(byText("Год")).parent().$(".input__control");
-    private SelenideElement owner = $(byText("Владелец")).parent().$(".input__control");
-    private SelenideElement CVC = $(byText("CVC/CVV")).parent().$(".input__control");
+    private SelenideElement cardNumberField = $("[placeholder='0000 0000 0000 0000']");
+    private SelenideElement monthField = $("[placeholder='08']");
+    private SelenideElement yearField =$("[placeholder='22']");
+    private SelenideElement ownerField = $("div:nth-child(3)  span:nth-child(1) > span > span > span.input__box > input");
+    private SelenideElement CVCField = $("[placeholder='999']");
 
-    private SelenideElement continueButton = $(byText("Продолжить"));
+    private SelenideElement continueButton = $("div:nth-child(4) > button");
 
-    private SelenideElement successNotif = $(byText("Операция одобрена Банком."));
-    private SelenideElement failedNotif = $(byText("Ошибка! Банк отказал в проведении операции."));
+    private SelenideElement successNotif = $(".notification_status_ok div.notification__content");
+    private SelenideElement failedNotif = $(".notification_status_error > div.notification__content");
 
-    private SelenideElement incorrectCard = $(byText("Номер карты")).parent().$(".input__sub");
-    private SelenideElement incorrectMonth = $(byText("Месяц")).parent().$(".input__sub");
-    private SelenideElement inValidMonth = $(byText("Неверно указан срок действия карты")).parent().$(".input__sub");
-
-    private SelenideElement incorrectYear = $(byText("Год")).parent().$(".input__sub");
-    private SelenideElement incorrectOwner = $(byText("Владелец")).parent().$(".input__sub");
-    private SelenideElement incorrectCVC = $(byText("CVC/CVV")).parent().$(".input__sub");
-    private SelenideElement сardNotif = $(byText("Истёк срок действия карты"));
+    private SelenideElement incorrectCardField = $("fieldset > div:nth-child(1)  span.input__sub");
+    private SelenideElement incorrectMonthField = $("div:nth-child(2) > span > span:nth-child(1) span.input__sub");
+    private SelenideElement inValidMonthField = $("div:nth-child(2) > span > span:nth-child(1)   span.input__sub");
+    private SelenideElement incorrectYearField = $("div:nth-child(2) > span > span:nth-child(2)  span.input__sub");
+    private SelenideElement incorrectOwnerField = $("div:nth-child(3) > span > span:nth-child(1)   span.input__sub");
+    private SelenideElement incorrectCVCField = $("div:nth-child(3) > span > span:nth-child(2) span.input__sub");
+    private SelenideElement сardNotif = $("div:nth-child(2) > span > span:nth-child(2)  span.input__sub");
 
     public void fillForm(CardInfo cardInfo) {
-        cardNumber.setValue(cardInfo.getCardNumber());
-        month.setValue(cardInfo.getMonth());
-        year.setValue(cardInfo.getYear());
-        owner.setValue(cardInfo.getCardOwner());
-        CVC.setValue(cardInfo.getCVC());
+        cardNumberField.setValue(cardInfo.getCardNumber());
+        monthField.setValue(cardInfo.getMonth());
+        yearField.setValue(cardInfo.getYear());
+        ownerField.setValue(cardInfo.getCardOwner());
+        CVCField.setValue(cardInfo.getCVC());
         continueButton.click();
     }
 
@@ -53,27 +52,27 @@ public class DebitPage {
     }
 
     public void cardNumberFail() {
-        incorrectCard.shouldBe(Condition.visible);
+        incorrectCardField.shouldBe(Condition.visible);
     }
 
     public void monthFail() {
-        incorrectMonth.shouldBe(Condition.visible);
+        incorrectMonthField.shouldBe(Condition.visible);
     }
 
     public void inValMonthFail() {
-        incorrectMonth.shouldBe(Condition.visible);
+        incorrectMonthField.shouldBe(Condition.visible);
     }
 
     public void yearFail() {
-        incorrectYear.shouldBe(Condition.visible);
+        incorrectYearField.shouldBe(Condition.visible);
     }
 
     public void ownerFail() {
-        incorrectOwner.shouldBe(Condition.visible);
+        incorrectOwnerField.shouldBe(Condition.visible);
     }
 
     public void CVCFail() {
-        incorrectCVC.shouldBe(Condition.visible);
+        incorrectCVCField.shouldBe(Condition.visible);
     }
 
 }
