@@ -2,6 +2,12 @@
 
 Проект автоматизации тестирования веб-приложения. Описание <a href= https://github.com/netology-code/qa-diploma>задания</a>.
 
+<a href= https://github.com/Rostiks52/Diplom/blob/master/Artifacts/Plan.md>План</a> автоматизации тестирования.
+
+<a href= https://github.com/Rostiks52/Diplom/blob/master/Artifacts/Report.md>Отчет</a> о проведенном тестировании.
+
+<a href= https://github.com/Rostiks52/Diplom/blob/master/Artifacts/Summary.md>Отчет</a> об автоматизации.
+
 ## Начало работы
 
 Проект необходимо склонировать на ПК, используя комманду 
@@ -28,11 +34,12 @@
 
 В другой вкладке теринала выполнить команду для запуска тестов:
   
-    .\gradlew test "-Ddatabase.url=jdbc:mysql://localhost:3306/mysql"
+    .\gradlew test "-Ddb.url=jdbc:mysql://localhost:3306/app"
 
 После выполнения тестов для просмотра отчетов в другой вкладке терминала выполнить команды:
 
     .\gradlew allureReport
+
 и затем
 
     .\gradlew allureServe 
@@ -45,6 +52,6 @@
 
 Тесты запускаются командой в другой вкладке терминала:
 
-    .\gradlew test "-Ddatabase.url=jdbc:postgresql://localhost:5432/postgres"
+    .\gradlew test "-Ddb.url=jdbc:postgresql://localhost:5432/app"
 
 

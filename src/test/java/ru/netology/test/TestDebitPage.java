@@ -32,7 +32,6 @@ public class TestDebitPage {
         open("http://localhost:8080");
     }
 
-
     @Test
     void shouldApprovedOperationUsingApprCard() {
         MainPage mainPage = new MainPage();

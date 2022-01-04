@@ -1,13 +1,11 @@
 package ru.netology.page;
-
 import com.codeborne.selenide.SelenideElement;
-
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class MainPage {
-    private SelenideElement debitButton = $("button:nth-child(3) >span");
-    private SelenideElement creditButton = $(".button_view_extra.button_size_m.button_theme_alfa-on-white > span");
+    private SelenideElement debitButton = $("[class='button button_size_m button_theme_alfa-on-white']");
+    private SelenideElement creditButton = $("[class='button button_view_extra button_size_m button_theme_alfa-on-white']");
 
 
     public DebitPage chooseDebitPage() {
